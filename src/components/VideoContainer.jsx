@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import VideoCard, { AdVideoCard } from "./VideoCard";
 import { FALLBACK_VIDEOS } from "../utils/helper";
+import { YOUTUBE_API_KEY } from "../utils/constants";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -27,7 +28,7 @@ export default function VideoContainer() {
               chart: "mostPopular",
               regionCode: "IN",
               maxResults: 24,
-              key: "AIzaSyA2u6T9circPfO7BMQQX9j4b2DO5kB8P18",
+              key: YOUTUBE_API_KEY,
             },
           }
         );
@@ -46,7 +47,7 @@ export default function VideoContainer() {
               q: activeCategory,
               maxResults: 24,
               type: "video",
-              key: "AIzaSyA2u6T9circPfO7BMQQX9j4b2DO5kB8P18",
+              key: YOUTUBE_API_KEY,
             },
           }
         );
